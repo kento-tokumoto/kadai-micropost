@@ -8,6 +8,7 @@
                 </div>
                 <div>
                     <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
+                     @include('user_favorite.favorite_button', ['micropost' => $micropost])
                 </div>
                 <div>
                     @if (Auth::id() == $micropost->user_id)
@@ -21,3 +22,4 @@
     @endforeach
 </ul>
 {{ $microposts->links('pagination::bootstrap-4') }}
+
